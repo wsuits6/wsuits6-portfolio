@@ -1,0 +1,87 @@
+/*
+=================================================
+General CSS styling for Home page and other pages
+=================================================
+*/
+
+/*Setting CSS variables*/
+:root{
+    --text-color :rgb(255, 255, 255);
+    --bg-color:rgb(0, 1, 10) ;
+    --grid-line-color:rgb(96, 164, 236);
+    --header-color: rgb(7, 138, 232);
+    --accent:rgb(255, 255, 255);
+}
+/*Global styling*/
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI';
+}
+
+body{
+    background: var(--bg-color);
+}
+h1,h2,h3,h4,h5,h6{
+    color: var(--header-color);
+}
+p{
+    color: var(--text-color);
+}
+
+
+/*
+=====================
+Header section styling
+Navber styling
+=====================
+*/
+
+.navbar-container{
+    display: flex;
+    flex-direction:row;
+    gap: 100px;
+    margin: 20px;
+    /*Push the bottom items down*/
+    margin-bottom: 60px;
+    padding: 10px;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+/*Menu Styling*/
+.menu-container{
+    display: flex;
+    flex-direction:row;
+    gap :30px;
+    align-items: center;
+}
+.menu-container a {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--accent);
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+/*LOGO styling */
+#logo{
+    padding: 5px;
+    margin: 5px;
+}
+
+
+/*
+====================
+HERO section Styling 
+====================
+*/
+
+.hero-container{
+    display: flex;
+    flex-direction: row;
+}
+
+
+
