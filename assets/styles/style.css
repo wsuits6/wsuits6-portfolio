@@ -112,11 +112,14 @@ HERO section Styling
 
 
 .name {
-    font-size: 2.5rem;
-    font-weight: bold;
-    background: linear-gradient(90deg, #0033cc, #33ccff); /* blue gradient */
-    -webkit-background-clip: text;  /* makes the background visible only on text */
-    -webkit-text-fill-color: transparent; /* hides the original text color */
+  /*Creating breathing spae */
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+  font-weight: bold;
+  background: linear-gradient(90deg, #0033cc, #33ccff); /* blue gradient */
+  -webkit-background-clip: text;  /* makes the background visible only on text */
+  -webkit-text-fill-color: transparent; /* hides the original text color */
 }
 
 .tagline {
@@ -135,15 +138,17 @@ HERO section Styling
 }
 
 .cta-primary {
-  background-color: var(--primary-color);
+  background: linear-gradient(90deg, #0033cc, #33ccff);
   color: white;
+  border: none;
 }
 
 .cta-primary:hover {
-  background-color: var(--secondary-color);
+  background: linear-gradient(90deg, #33ccff, #0099ff);
   transform: translateY(-3px);
   box-shadow: 0 4px 15px rgba(51, 153, 255, 0.5);
 }
+
 
 .cta-secondary {
   background-color: transparent;
@@ -154,4 +159,44 @@ HERO section Styling
 .cta-secondary:hover {
   background-color: var(--primary-color);
   color: white;
+}
+
+
+/* Improved Hero Image Styling */
+.image-container {
+  width: 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 25px;
+  border: 2px solid rgba(0, 102, 204, 0.6);
+  box-shadow: 0 0 25px rgba(51, 153, 255, 0.35);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* Hover motion */
+.image-container img:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 0 35px rgba(51, 153, 255, 0.55);
+}
+
+/* Optional glowing ring behind image */
+.image-container::before {
+  content: "";
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  background: radial-gradient(
+    rgba(0, 102, 204, 0.3),
+    transparent
+  );
+  filter: blur(40px);
+  z-index: -1;
 }
