@@ -5,13 +5,14 @@ General CSS styling for Home page and other pages
 */
 
 /*Setting CSS variables*/
-:root{
-    --text-color: rgb(255, 255, 255); /* white text */
-    --bg-color: rgb(0, 0, 0); /* pure black background */
-    --grid-line-color: rgb(0, 102, 204); /* blue grid lines */
-    --header-color: rgb(0, 102, 204); /* blue headers */
-    --accent: rgb(51, 153, 255); /* lighter blue for highlights */
+:root {
+  --text-color: rgb(255, 255, 255);        /* white text */
+  --bg-color: rgb(0, 0, 0);               /* black background */
+  --primary-color: rgb(0, 102, 204);       /* blue for headers/buttons */
+  --secondary-color: rgb(51, 153, 255);    /* highlights & hover */
+  --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
 /*Global styling*/
 *{
     margin: 0;
@@ -29,6 +30,15 @@ p{
     color: var(--text-color);
 }
 
+a{
+    text-decoration: none;
+    color: var(--secondary-color);
+    transition: color 0.3s ease;
+}
+
+a:hover{
+    color: var(--primary-color);
+}
 
 /*
 =====================
