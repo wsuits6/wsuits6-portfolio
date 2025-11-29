@@ -6,17 +6,17 @@ General CSS styling for Home page and other pages
 
 /*Setting CSS variables*/
 :root{
-    --text-color :rgb(255, 255, 255);
-    --bg-color:rgb(0, 1, 10) ;
-    --grid-line-color:rgb(96, 164, 236);
-    --header-color: rgb(7, 138, 232);
-    --accent:rgb(255, 255, 255);
+    --text-color: rgb(255, 255, 255); /* white text */
+    --bg-color: rgb(0, 0, 0); /* pure black background */
+    --grid-line-color: rgb(0, 102, 204); /* blue grid lines */
+    --header-color: rgb(0, 102, 204); /* blue headers */
+    --accent: rgb(51, 153, 255); /* lighter blue for highlights */
 }
 /*Global styling*/
 *{
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI';
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body{
@@ -81,7 +81,52 @@ HERO section Styling
 .hero-container{
     display: flex;
     flex-direction: row;
+    align-items: center;
+}
+
+.name{
+    margin: 10px;
+    padding: 10px;
+    align-items: center;
+}
+
+.tagline{
+    color: var(--accent);
+    font-weight: bold;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+}
+
+.cta-container{
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+    padding: 10px;
+    gap: 20px;
+}
+
+.cta-primary{
+    padding: 5px;
+    border: 2px;
+    border-radius: 10px;
+    background-color: var(--header-color);
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.cta-primary:hover{
+    box-shadow: 0px 0px 10px var(--accent);
+    transform: 0.1;
 }
 
 
-
+@media (max-width: 900px){
+    .hero-container{
+        display: flex;
+        flex-direction: column;
+    }
+}
