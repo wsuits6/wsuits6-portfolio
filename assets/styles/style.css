@@ -110,11 +110,13 @@ HERO section Styling
   max-width: 600px;
 }
 
+
 .name {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: var(--primary-color);
-  margin-bottom: 20px;
+    font-size: 2.5rem;
+    font-weight: bold;
+    background: linear-gradient(90deg, #0033cc, #33ccff); /* blue gradient */
+    -webkit-background-clip: text;  /* makes the background visible only on text */
+    -webkit-text-fill-color: transparent; /* hides the original text color */
 }
 
 .tagline {
