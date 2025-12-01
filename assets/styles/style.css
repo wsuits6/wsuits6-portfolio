@@ -4,151 +4,137 @@ General CSS styling for Home page and other pages
 =================================================
 */
 
-/*Setting CSS variables*/
+/* my colors, simple vibe */
 :root {
-  --text-color: rgb(255, 255, 255);        /* white text */
-  --bg-color: rgb(0, 0, 0);               /* black background */
-  --primary-color: rgb(0, 102, 204);       /* blue for headers/buttons */
-  --secondary-color: rgb(51, 153, 255);    /* highlights & hover */
+  --text-color: rgb(245, 245, 245);       
+  --bg-color: rgb(10, 10, 25);           
+  --primary-color: rgb(0, 150, 255);     
+  --secondary-color: rgb(102, 204, 255); 
   --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --header-color: rgb(0, 200, 255);     
 }
 
-/*Global styling*/
-*{
-    margin: 0;
-    padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* global reset */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-main);
+  box-sizing: border-box;
 }
 
-body{
-    background: var(--bg-color);
-}
-h1,h2,h3,h4,h5,h6{
-    color: var(--header-color);
-}
-p{
-    color: var(--text-color);
+body {
+  background: var(--bg-color);
 }
 
-a{
-    text-decoration: none;
-    color: var(--secondary-color);
-    transition: color 0.3s ease;
+h1, h2, h3, h4, h5, h6 {
+  color: var(--header-color);
 }
 
-a:hover{
-    color: var(--primary-color);
+p {
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: var(--secondary-color);
+}
+
+a:hover {
+  color: var(--primary-color);
 }
 
 /*
 =====================
-Header section styling
-Navber styling
+Navbar simple vibes
 =====================
 */
-
-.navbar-container{
-    display: flex;
-    flex-direction:row;
-    align-items: center;
-    gap: 100px;
-    margin: 20px;
-    /*Push the bottom items down*/
-    margin-bottom: 60px;
-    padding: 15px 30px;
-    align-items: center;
-    top: 0;
-    z-index: 1000;
-    justify-content: space-between;
-
+.navbar-container {
+  width: 100%;
+  overflow: hidden;
+  padding: 15px 20px;
+  margin-bottom: 50px;
 }
 
-/*Menu Styling*/
-.menu-container{
-    display: flex;
-    flex-direction:row;
-    gap :30px;
-    align-items: center;
+.logo-container {
+  float: left;
 }
+
+#logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.menu-container {
+  float: right;
+}
+
 .menu-container a {
-    margin-left: 20px;
-    font-weight: bold;
-    letter-spacing: 1px;
-    text-decoration: none;
-    font-weight: bold;
-    text-align: center;
-}
-.menu-container a:hover{
-    color: var(--primary-color);
-    transform: scale(1.05);
+  display: inline-block;
+  margin-left: 20px;
+  font-weight: bold;
 }
 
-/*LOGO styling */
-#logo{
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: var(--primary-color);
-    padding: 5px;
-    margin: 5px;
+.menu-container a:hover {
+  color: var(--primary-color);
 }
 
+/* clear floats */
+.navbar-container::after {
+  content: "";
+  display: block;
+  clear: both;
+}
 
 /*
 ====================
-HERO section Styling 
+Hero section
 ====================
 */
 .hero-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 50px;
+  width: 90%;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 40px 0;
 }
 
 .herotext-container {
-  max-width: 600px;
+  width: 100%;
+  margin-bottom: 20px;
 }
 
-
 .name {
-  /*Creating breathing spae */
-  margin-top: 10px;
-  margin-bottom: 20px;
   font-size: 2.5rem;
   font-weight: bold;
-  background: linear-gradient(90deg, #0033cc, #33ccff); /* blue gradient */
-  -webkit-background-clip: text;  /* makes the background visible only on text */
-  -webkit-text-fill-color: transparent; /* hides the original text color */
+  margin-bottom: 15px;
+  color: var(--primary-color);
 }
 
 .tagline {
   font-size: 1.2rem;
   color: var(--secondary-color);
-  margin-bottom: 30px;
+  margin-bottom: 25px;
 }
 
 .cta-container button {
   padding: 12px 25px;
+  border-radius: 12px;
   border: none;
-  border-radius: 10px;
-  cursor: pointer;
   font-weight: bold;
-  transition: all 0.3s ease;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-bottom: 10px;
 }
 
 .cta-primary {
-  background: linear-gradient(90deg, #0033cc, #33ccff);
+  background-color: var(--primary-color);
   color: white;
-  border: none;
 }
 
 .cta-primary:hover {
-  background: linear-gradient(90deg, #33ccff, #0099ff);
-  transform: translateY(-3px);
-  box-shadow: 0 4px 15px rgba(51, 153, 255, 0.5);
+  background-color: var(--secondary-color);
 }
-
 
 .cta-secondary {
   background-color: transparent;
@@ -161,58 +147,159 @@ HERO section Styling
   color: white;
 }
 
-
-/* Improved Hero Image Styling */
+/* hero image simple */
 .image-container {
-  width: 45%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 30px;
 }
 
 .image-container img {
-  width: 100%;
-  height: auto;
-  border-radius: 25px;
-  border: 2px solid rgba(0, 102, 204, 0.6);
-  box-shadow: 0 0 25px rgba(51, 153, 255, 0.35);
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  max-width: 300px;
+  border-radius: 15px;
+  border: 2px solid var(--secondary-color);
 }
 
-/* Hover motion */
-.image-container img:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 0 35px rgba(51, 153, 255, 0.55);
+/*
+====================
+Projects section
+====================
+*/
+.projects-contianer {
+  width: 90%;
+  margin: 0 auto;
 }
 
-/* Optional glowing ring behind image */
-.image-container::before {
-  content: "";
-  position: absolute;
-  width: 80%;
-  height: 80%;
-  border-radius: 50%;
-  background: radial-gradient(
-    rgba(0, 102, 204, 0.3),
-    transparent
-  );
-  filter: blur(40px);
-  z-index: -1;
+.project-card {
+  background: linear-gradient(to bottom, #0011ff, #0033cc);
+  padding: 25px 20px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  color: var(--text-color);
+  text-align: center;
 }
 
+.project-card h1 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: var(--header-color);
+}
 
+.project-card .project-status {
+  font-weight: bold;
+  color: var(--secondary-color);
+  margin-bottom: 12px;
+}
 
+.project-card p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
 
- /*
- =================
- Project styling 
- =================
- */
+/* stack side by side if enough space */
+@media (min-width: 600px) {
+  .project-card {
+    display: inline-block;
+    width: 48%;
+    margin-right: 2%;
+  }
+  .project-card:nth-child(2n) {
+    margin-right: 0;
+  }
+}
 
- .projects-contianer{
-  display: grid;
-  gap: 1.5rem;
-  /*gird tempalte difiniotin of columsn and rows */
-  grid-template-columns: repeat(auto-fit, minimax(250px, 1fr));
- }
+@media (max-width: 599px) {
+  .project-card {
+    width: 100%;
+    margin-right: 0;
+  }
+}
+
+/*
+====================
+Certifications
+====================
+*/
+#certifications .projects-contianer {
+  width: 90%;
+  margin: 0 auto;
+}
+
+#certifications .project-card {
+  background: linear-gradient(to bottom, #0033cc, #0011aa);
+  padding: 25px 20px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#certifications .project-card h1 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: var(--secondary-color);
+}
+
+#certifications .project-card button {
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: 2px solid var(--primary-color);
+  background-color: transparent;
+  color: var(--primary-color);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#certifications .project-card button:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/*
+====================
+Socials
+====================
+*/
+.socials-contianer {
+  width: 90%;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.social-icon {
+  display: inline-block;
+  margin: 0 10px;
+  padding: 10px 20px;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.social-icon:hover {
+  background-color: var(--secondary-color);
+}
+
+/*
+====================
+Profile snippets
+====================
+*/
+.profile-snippets {
+  width: 90%;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.profile-card {
+  display: inline-block;
+  width: 180px;
+  padding: 15px;
+  margin: 10px;
+  background: linear-gradient(to bottom, #0022cc, #0055ff);
+  color: var(--text-color);
+  border-radius: 12px;
+}
+
+.profile-card:hover {
+  transform: translateY(-3px);
+}
