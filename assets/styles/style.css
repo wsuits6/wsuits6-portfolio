@@ -200,3 +200,19 @@ HERO section Styling
   filter: blur(40px);
   z-index: -1;
 }
+
+
+
+
+ /*
+ =================
+ Project styling 
+ =================
+ */
+
+ .projects-contianer{
+  display: grid;
+  gap: 1.5rem;
+  /*gird tempalte difiniotin of columsn and rows */
+  grid-template-columns: repeat(auto-fit, minimax(250px, 1fr));
+ }
