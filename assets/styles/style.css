@@ -169,6 +169,14 @@ Projects section
   width: 90%;
   margin: 0 auto;
 }
+.projects-header{
+  margin: 80px;
+  align-items: center;
+  font-size: 1em;
+  width: 70%;
+  margin-bottom: 50px;
+  color: var(--primary-color);
+}
 
 .project-card {
   background: linear-gradient(to bottom, #0011ff, #0033cc);
@@ -177,12 +185,16 @@ Projects section
   margin-bottom: 20px;
   color: var(--text-color);
   text-align: center;
+  height: 70%;
+  width: 70%;
 }
 
 .project-card h1 {
   font-size: 1.5rem;
   margin-bottom: 10px;
   color: var(--header-color);
+  text-shadow: 0px 0px 5px var(--bg-color);
+  width: 40px;
 }
 
 .project-card .project-status {
