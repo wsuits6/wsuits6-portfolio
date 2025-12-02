@@ -14,7 +14,7 @@ General CSS styling for Home page and other pages
   --card-bg: rgba(0, 17, 255, 0.1);
   --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   --header-color: #00c8ff;
-  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: all 0.3s ease;
 }
 
 /* global reset */
@@ -72,6 +72,7 @@ Navbar simple vibes
 
 .logo-container {
   flex-shrink: 0;
+  /*Making sure the logo shrinks relative to other elements currenlty set to zero */
 }
 
 #logo {
@@ -103,9 +104,12 @@ Navbar simple vibes
   padding: 5px 0;
 }
 
+/*create a fake A tag after each a tag*/
 .menu-container a::after {
+  /*set content of fake a tag to nothing */
   content: '';
   position: absolute;
+  /*Specifying */
   bottom: 0;
   left: 0;
   width: 0;
@@ -120,11 +124,12 @@ Navbar simple vibes
 
 /*
 ====================
-Hero section
+ Hero section 
 ====================
 */
 .hero-container {
   width: 90%;
+  /*setting maximum width */
   max-width: 1200px;
   margin: 60px auto;
   padding: 40px 0;
@@ -209,10 +214,12 @@ Hero section
 .cta-primary:hover {
   background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
   box-shadow: 0 6px 25px rgba(0, 200, 255, 0.5);
+  /*raise the element to the top a little using the X and Y axis */
   transform: translateY(-2px);
 }
 
 .cta-secondary {
+  /*setting he background of the secodnar y   button to  transpafent */
   background-color: transparent;
   border: 2px solid var(--primary-color);
   color: var(--primary-color);
