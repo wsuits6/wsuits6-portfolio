@@ -54,10 +54,18 @@ Navbar simple vibes
   overflow: hidden;
   padding: 15px 20px;
   margin-bottom: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .logo-container {
-  float: left;
+  width: 17%;
 }
 
 #logo {
@@ -67,11 +75,13 @@ Navbar simple vibes
 }
 
 .menu-container {
-  float: right;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .menu-container a {
-  display: inline-block;
   margin-left: 20px;
   font-weight: bold;
 }
@@ -100,17 +110,17 @@ Hero section
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 40px; 
+  gap: 20px; 
 }
 
 .herotext-container {
-  width: 60%;
+  width: 40%;
   margin-bottom: 20px;
 }
 
 
 .image-container {
-  width: 100%;
+  width: 80%;
   text-align: center;
   margin-bottom: 30px;
 }
@@ -129,8 +139,11 @@ Hero section
   border-color: var(--primary-color);
 }
 
-
-
+.herotext-container .name {
+  font-size: 3rem;
+  line-height: 1.2;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+}
 
 .name {
   font-size: 2.5rem;
