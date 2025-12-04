@@ -7,7 +7,7 @@ General CSS styling for Home page and other pages
 /* my colors, simple vibe */
 :root {
   --text-color: #f5f5f5;       
-  --bg-color: #0a0a19;           
+  --bg-color: #090809;           
   --primary-color: #0096ff;     
   --secondary-color: #66ccff; 
   --accent-glow: rgba(0, 150, 255, 0.3);
@@ -65,9 +65,9 @@ Navbar simple vibes
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(10, 10, 25, 0.95);
+  background: var(--bg-color);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(0, 150, 255, 0.1);
+  
 }
 
 .logo-container {
@@ -109,7 +109,7 @@ Navbar simple vibes
   /*set content of fake a tag to nothing */
   content: '';
   position: absolute;
-  /*Specifying */
+  /*Specifying content axis */
   bottom: 0;
   left: 0;
   width: 0;
@@ -136,7 +136,8 @@ Navbar simple vibes
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 60px; 
+  gap: 60px;
+  border-bottom: 1px solid rgba(0, 150, 255, 0.1); 
 }
 
 .herotext-container {
@@ -144,9 +145,29 @@ Navbar simple vibes
   min-width: 300px;
 }
 
+.bullettagline{
+  margin-bottom: 20px;
+  margin-top: 20px;
+  text-align: left;
+  text-decoration: none;
+  display: block;
+  padding: 0;
+  border: none;
+  top: 0;
+  bottom: 0;
+  color: var(--primary-color);
+  text-align: left;
+  text-shadow: 0px 0px 2px var(--header-color);
+  font-weight: bolder;
+  letter-spacing: 1.5px;
+  
+}
+
 .image-container {
   flex: 1;
   display: flex;
+  flex-direction: column;
+  gap: 5px;
   justify-content: center;
   align-items: center;
 }
@@ -206,7 +227,7 @@ Navbar simple vibes
 }
 
 .cta-primary {
-  background: linear-gradient(135deg, var(--primary-color), #0066cc);
+  background: linear-gradient(-30deg, var(--primary-color), #0066cc);
   color: white;
   box-shadow: 0 4px 15px rgba(0, 150, 255, 0.3);
 }
@@ -228,15 +249,17 @@ Navbar simple vibes
 .cta-secondary:hover {
   background-color: var(--primary-color);
   color: white;
+  /*hover background colo for secodn CTA*/
   box-shadow: 0 4px 15px rgba(0, 150, 255, 0.3);
   transform: translateY(-2px);
 }
 
 /*
-====================
-Projects section
-====================
+=======================
+Project Section styling 
+========================
 */
+
 #projects {
   padding: 60px 0;
 }
@@ -265,6 +288,7 @@ Projects section
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
+  /*creating equla colorm in the grid container */
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 25px;
   padding: 0 20px;
@@ -272,6 +296,7 @@ Projects section
 
 .project-card {
   background: linear-gradient(145deg, rgba(0, 17, 255, 0.15), rgba(0, 51, 204, 0.1));
+  /*Create a blur filder for the project card*/
   backdrop-filter: blur(10px);
   padding: 30px;
   border-radius: 20px;
@@ -282,8 +307,10 @@ Projects section
   overflow: hidden;
 }
 
+/*create an invicle elemnt inthe project card for styling */
 .project-card::before {
   content: '';
+  /*Positioning to control the position of the psudeo elemtn create */
   position: absolute;
   top: 0;
   left: 0;
@@ -298,6 +325,7 @@ Projects section
   transform: scaleX(1);
 }
 
+/*Raise the card */
 .project-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 15px 40px rgba(0, 150, 255, 0.3);
@@ -414,18 +442,24 @@ Socials
 }
 
 .social-icon {
+  background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
   padding: 14px 28px;
-  background: linear-gradient(135deg, var(--primary-color), #0066cc);
   color: white;
   border-radius: 12px;
   cursor: pointer;
   font-weight: 600;
+  /*Transistionaing the content easily by usni the evairbale*/
   transition: var(--transition-smooth);
   box-shadow: 0 4px 15px rgba(0, 150, 255, 0.2);
+}
+.social-icon img{
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
 }
 
 .social-icon:hover {
   background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+  
   transform: translateY(-5px);
   box-shadow: 0 8px 25px rgba(0, 200, 255, 0.4);
 }
@@ -467,7 +501,8 @@ Profile snippets
 
 /*
 ====================
-Responsive adjustments
+Mobile screen stryling
+for all co tianers 
 ====================
 */
 @media (max-width: 768px) {
@@ -475,10 +510,18 @@ Responsive adjustments
     flex-direction: column;
     text-align: center;
     gap: 40px;
+    height: 100vh;
   }
   
   .herotext-container .name {
     font-size: 2.2rem;
+  }
+
+  .bullettagline{
+    text-align: center;
+  }
+  .bullettagline p{
+    text-align: center;
   }
   
   .tagline {
@@ -506,6 +549,9 @@ Responsive adjustments
   }
 }
 
+
+
+/* Mobile styling for all text based elements and containers */
 @media (max-width: 480px) {
   .herotext-container .name {
     font-size: 1.8rem;
@@ -514,7 +560,8 @@ Responsive adjustments
   #logo {
     font-size: 1.5rem;
   }
-  
+
+  /*Controling grid columnson mobile screens */
   .projects-contianer {
     grid-template-columns: 1fr;
   }
